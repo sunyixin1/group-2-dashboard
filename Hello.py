@@ -1,51 +1,27 @@
-# Copyright (c) Streamlit Inc. (2018-2022) Snowflake Inc. (2022)
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 import streamlit as st
-from streamlit.logger import get_logger
 
-LOGGER = get_logger(__name__)
+# 在标题上方加载图片
+st.image('Graph/inspector.webp')  # 确保图片路径是正确的
 
-
-def run():
-    st.set_page_config(
-        page_title="Hello",
-        page_icon="👋",
-    )
-
-    st.write("# Welcome to Streamlit! 👋")
-
-    st.sidebar.success("Select a demo above.")
-
-    st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+# 使用Markdown和CSS来居中主标题
+st.markdown(
     """
+    <h1 style="text-align:center;">Rijkwaterstraat project Group 2</h1>
+    """,
+    unsafe_allow_html=True
+)
+
+# 显示5行副标题，每行是一个人的名字和学号，并使用Markdown和CSS来居中
+names_and_ids = [
+    ("Heisuke Miyoshi", "5733693"),
+    ("Klaas Sicking", "4948416"),
+    ("Martijn Stok", "5070740"),
+    ("Martin van Andel", "4577566"),
+    ("Sun Yixin", "5715210")
+]
+
+for name, stud_id in names_and_ids:
+    st.markdown(
+        f"<h2 style='text-align:center;'>{name} - {stud_id}</h2>",
+        unsafe_allow_html=True
     )
-
-
-if __name__ == "__main__":
-    run()
