@@ -32,7 +32,7 @@ st.image(img_path, caption=img_name, use_column_width=True)
 st.title("Range")
 
 def main():
-    st.title("选择坐标展示相应图像")
+    st.title("Range Graph")
 
     # 定义坐标和对应的图像文件路径
     coords_to_image = {
